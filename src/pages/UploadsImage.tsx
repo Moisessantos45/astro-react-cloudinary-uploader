@@ -21,8 +21,8 @@ const UploadsImage = () => {
     e: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
     e.preventDefault();
-    const presset = "bg_perfil";
-    const name = "dtkskpitc"
+    const presset = import.meta.env.VITE_PRESSET_CLOUDINARY as string;
+    const name = import.meta.env.VITE_NAME_CLOUDINARY as string;
     if (files === null || files.length === 0) {
       ToastifyFunction("No file selected", false);
       return;
